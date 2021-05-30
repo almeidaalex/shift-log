@@ -1,5 +1,5 @@
 interface Shift {
-    log_id: number,
+    id: number,
     status: boolean,
     eventDate: Date,
     area: number,    
