@@ -30,10 +30,15 @@
       <Content Include="Fixtures\Resources\InsertShiftLogRequest.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Fixtures\Resources\UpdateShiftLogRequest.json" />
+      <Content Include="Fixtures\Resources\UpdateShiftLogRequest.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
       <Compile Remove="Fixtures\UpdateShiftFixture.cs" />
+      <Compile Remove="Helpers\WebFactoryExtensions.cs" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ShiftLogger.Domain;
 using ShiftLogger.Model;
 
 namespace ShiftLogger.Infra

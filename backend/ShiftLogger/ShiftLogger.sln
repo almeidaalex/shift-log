@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiftLogger", "ShiftLogger\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiftLogger.Tests", "ShiftLogger.Tests\ShiftLogger.Tests.csproj", "{A94AE077-8501-455B-A4A7-A1278FE09D7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiftLogger.Domain", "ShiftLogger.Domain\ShiftLogger.Domain.csproj", "{214A5E17-2890-4D4F-80F8-1965A2B4F576}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A94AE077-8501-455B-A4A7-A1278FE09D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A94AE077-8501-455B-A4A7-A1278FE09D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A94AE077-8501-455B-A4A7-A1278FE09D7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{214A5E17-2890-4D4F-80F8-1965A2B4F576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214A5E17-2890-4D4F-80F8-1965A2B4F576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214A5E17-2890-4D4F-80F8-1965A2B4F576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214A5E17-2890-4D4F-80F8-1965A2B4F576}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

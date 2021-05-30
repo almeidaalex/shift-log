@@ -1,4 +1,8 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=28016d47_002Db937_002D4276_002Dbe11_002Db6321f344c67/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Insert_a_valid_shift_log" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/Users/almeida/Library/Caches/JetBrains/Rider2021.1/resharper-host/temp/Rider/vAny/CoverageData/_ShiftLogger.-156166642/Snapshot/snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=28016d47_002Db937_002D4276_002Dbe11_002Db6321f344c67/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Insert_a_valid_shift_log" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;ProjectFile&gt;A94AE077-8501-455B-A4A7-A1278FE09D7A/f:InsertShiftLog.cs&lt;/ProjectFile&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bd6442af_002D175a_002D454e_002D8158_002D1b4fb9f7afe3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Insert_a_shift_log_with_some_missing_fields" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Project Location="/Users/almeida/projects/learning/shift_log/backend/ShiftLogger/ShiftLogger.Tests" Presentation="&amp;lt;ShiftLogger.Tests&amp;gt;" /&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

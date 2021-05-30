@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using ShiftLogger.Application;
+using ShiftLogger.Model.Requests;
 
 namespace ShiftLogger.Pipelines
 {

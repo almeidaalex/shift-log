@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
 using System.Threading.Tasks;
-using ShiftLogger.Model;
+using ShiftLogger.Domain;
 
 namespace ShiftLogger.Infra
 {
@@ -22,10 +21,10 @@ namespace ShiftLogger.Infra
         public ShiftLog Get(object id) =>
             _context.ShiftLogs.Find(id);
 
-        public void Update(ShiftLog entity)
+        public ShiftLog Update(ShiftLog entity)
         {
             _context.ShiftLogs.Update(entity);
-            _context.SaveChanges();
+            return entity;
         }
 
         public void Delete(object id)
@@ -35,11 +34,11 @@ namespace ShiftLogger.Infra
                 _context.ShiftLogs.Remove(entity);
         }
 
-        public Task AddAsync(ShiftLog entity)
+        public async Task<ShiftLog> AddAsync(ShiftLog entity)
         {
             if (entity is not null)
-                _context.ShiftLogs.Add(entity);
-            return Task.CompletedTask;
+                await _context.ShiftLogs.AddAsync(entity);
+            return entity;
         }
 
     }

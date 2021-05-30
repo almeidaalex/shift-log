@@ -6,6 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="FluentValidation" Version="10.2.1" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="10.2.1" />
         <PackageReference Include="MediatR" Version="9.0.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
@@ -16,6 +18,28 @@
     <ItemGroup>
       <Compile Remove="WeatherForecast.cs" />
       <Compile Remove="Controllers\WeatherForecastController.cs" />
+      <Compile Remove="Pipelines\**" />
+      <Compile Remove="Model\Requests\CreateShiftLogRequest.cs" />
+      <Compile Remove="Model\Requests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Pipelines\**" />
+      <EmbeddedResource Remove="Model\Requests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Pipelines\**" />
+      <None Remove="Model\Requests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Pipelines\**" />
+      <Content Remove="Model\Requests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ShiftLogger.Domain\ShiftLogger.Domain.csproj" />
     </ItemGroup>
 
 </Project>

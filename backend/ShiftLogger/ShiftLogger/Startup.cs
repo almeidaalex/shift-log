@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MediatR;
 using MediatR.Pipeline;
 using Microsoft.AspNetCore.Builder;
@@ -15,9 +17,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ShiftLogger.Domain;
 using ShiftLogger.Infra;
 using ShiftLogger.Model;
-using ShiftLogger.Pipelines;
+using ShiftLogger.Model.Request;
+
 
 namespace ShiftLogger
 {
@@ -43,7 +47,8 @@ namespace ShiftLogger
             services.AddDbContext<ShiftLoggerContext>(opts => opts.UseInMemoryDatabase("ShipperLoggerDb"));
             services.AddScoped<IRepository<ShiftLog>, ShiftLogRepo>();
             services.AddMediatR(typeof(Startup));
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(GenericPipelineBehavior<,>));
+            services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateShiftLogValidation>());
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

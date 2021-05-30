@@ -2,7 +2,7 @@ using System;
 using MediatR;
 using ShiftLogger.Model;
 
-namespace ShiftLogger.Application
+namespace ShiftLogger.Model.Requests
 {
     public class UpdateShiftLogRequest : IRequest<ShiftLog>
     {

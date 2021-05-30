@@ -1,13 +1,14 @@
 {
   "valid_request": {
+    "id": 55,
     "area": 1,
-    "eventDate": "2021-05-30T14:40:55.397Z",
+    "event_date": "2021-05-30T14:40:55.397Z",
     "status": true,
     "machine": "Machine 01",
     "operator": "Operator 01",
-    "comment": "Create new shift registry"
+    "comment": "Changed comment"
   },
   "missing_fields_request": {
-     "status": true
+    "status": true
   }
 }

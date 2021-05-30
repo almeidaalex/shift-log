@@ -7,7 +7,7 @@ using MediatR;
 using ShiftLogger.Infra;
 using ShiftLogger.Model;
 
-namespace ShiftLogger.Application
+namespace ShiftLogger.Model.Requests
 {
     public class CreateShiftLogRequest : IRequest<ShiftLog>, IRequestValidator
     {

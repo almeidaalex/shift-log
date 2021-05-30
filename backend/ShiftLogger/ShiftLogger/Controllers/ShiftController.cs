@@ -1,56 +1,66 @@
-using System.Net;
+using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ShiftLogger.Application;
-using ShiftLogger.Infra;
+using ShiftLogger.Domain;
 using ShiftLogger.Model;
+using ShiftLogger.Model.Request;
+
 
 namespace ShiftLogger.Controllers
 {
     [Route("api/shift")]
     public class ShiftController : Controller
     {
-        private readonly IRepository<ShiftLog> _repository;
         private readonly IMediator _mediator;
+        private readonly IRepository<ShiftLog> _repository;
 
-        public ShiftController(IRepository<ShiftLog> repository, IMediator mediator)
+        public ShiftController(IMediator mediator, IRepository<ShiftLog> repository)
         {
-            _repository = repository;
             _mediator = mediator;
+            _repository = repository;
         }
         
         [HttpGet]
         public IActionResult GetAll() =>
-            Ok(_repository.GetAll());
-
+            Ok(_repository.GetAll().Select(shift => (ShiftLogView)shift).ToArray());
+        
         [HttpGet("{id:int}")]
         public IActionResult Get(int id) =>
              _repository.Get(id) is ShiftLog log
-                 ? Ok(log)
+                 ? Ok((ShiftLogView)log)
                  : NotFound();
-
+        
         [HttpDelete("{id:int}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            _repository.Delete(id);
-            return NoContent();
+            var resp = await _mediator.Send(new DeleteShifLogRequest(id));
+            return resp.Success
+                ? NoContent()
+                : BadRequest();
         }
 
         [HttpPost]
         [ProducesResponseType(typeof(ShiftLog), 201)]
         public async Task<IActionResult> Post([FromBody] CreateShiftLogRequest request)
         {
-            var entity = await _mediator.Send(request);
-            return Created($"api/shift/{entity.Id}", entity);
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            
+            var result = await _mediator.Send(request);
+            return result.Success
+                ? Created($"api/shift/{result.Value.Id}", result.Value)
+                : BadRequest(result.Error);
         }
 
         [HttpPut("{id:int}")]
         [ProducesResponseType(typeof(ShiftLog), 200)]
         public async Task<IActionResult> Put(int id, [FromBody] UpdateShiftLogRequest request)
         {
-            var entity = await _mediator.Send(request);
-            return Ok();
+            var result = await _mediator.Send(request);
+            return result.Success
+                ? Ok(result.Value)
+                : BadRequest(result.Error);
         }
     }
 }
