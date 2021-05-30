@@ -34,7 +34,7 @@ namespace ShiftLogger.Tests
         [Fact]
         public async Task Should_return_shift_log_view_by_id()
         {
-            var resp = await _httpClient.GetFromJsonAsync<ShiftLogView>("api/shift/1");
+            var resp = await _httpClient.GetFromJsonAsync<ShiftLog>("api/shift/1");
             resp.Should().NotBeNull();
         }
         

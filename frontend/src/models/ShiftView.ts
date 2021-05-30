@@ -1,11 +1,11 @@
-interface Shift {
-    log_id: number,
+interface ShiftView {
+    id: number,
     status: boolean,
     eventDate: Date,
-    area: number,    
+    area: string,    
     machine: string,
     operator: string,
     comment: string
 }
 
-export default Shift
+export default ShiftView

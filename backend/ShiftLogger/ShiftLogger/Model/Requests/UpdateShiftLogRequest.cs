@@ -1,5 +1,6 @@
 using System;
 using MediatR;
+using ShiftLogger.Domain;
 using ShiftLogger.Model;
 
 namespace ShiftLogger.Model.Requests

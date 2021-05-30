@@ -8,7 +8,6 @@ using ShiftLogger.Model.Requests;
 namespace ShiftLogger.Pipelines
 {
     public class GenericPipelineBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-      where TRequest : IRequestValidator
     {
         private readonly TextWriter _writer;
 

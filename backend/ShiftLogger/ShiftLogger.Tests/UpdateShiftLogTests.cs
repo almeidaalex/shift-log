@@ -45,7 +45,7 @@ namespace ShiftLogger.Tests
         public async Task Should_return_bad_request_for_invalid_request()
         {       
             var content = _document.GetRequest("missing_fields_request").AsContent();
-            var resp = await _httpClient.PutAsync("api/shift/56", content);
+            var resp = await _httpClient.PutAsync("api/shift/55", content);
             resp.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
 

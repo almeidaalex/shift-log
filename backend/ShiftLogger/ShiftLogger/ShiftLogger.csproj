@@ -14,30 +14,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.6" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Compile Remove="WeatherForecast.cs" />
-      <Compile Remove="Controllers\WeatherForecastController.cs" />
-      <Compile Remove="Pipelines\**" />
-      <Compile Remove="Model\Requests\CreateShiftLogRequest.cs" />
-      <Compile Remove="Model\Requests\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="Pipelines\**" />
-      <EmbeddedResource Remove="Model\Requests\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Pipelines\**" />
-      <None Remove="Model\Requests\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Remove="Pipelines\**" />
-      <Content Remove="Model\Requests\**" />
-    </ItemGroup>
-
+      
     <ItemGroup>
       <ProjectReference Include="..\ShiftLogger.Domain\ShiftLogger.Domain.csproj" />
     </ItemGroup>

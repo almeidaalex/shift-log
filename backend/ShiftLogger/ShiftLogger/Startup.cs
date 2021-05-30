@@ -63,6 +63,7 @@ namespace ShiftLogger
                 {
                     c.AllowAnyHeader();
                     c.AllowAnyOrigin();
+                    c.AllowAnyMethod();
                 });
             }
             

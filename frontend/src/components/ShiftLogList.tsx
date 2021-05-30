@@ -1,8 +1,9 @@
-import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Button, Typography } from "@material-ui/core";
+import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Button, Typography, Switch } from "@material-ui/core";
 import Shift from '../models/Shift';
+import ShiftView from "../models/ShiftView";
 
 interface ShiftLogProps {
-    logs: Shift[];
+    logs: ShiftView[];
     onEdit: (log_id: number) => void
     onDelete: (log_id: number) => void
 }
@@ -27,15 +28,23 @@ export const ShiftLogList = (props: ShiftLogProps)  => {
                     </TableHead>
                     <TableBody >
                         { props.logs.map(log => 
-                            <TableRow key={log.log_id}>
-                                <TableCell>{log.event_date}</TableCell>
+                            <TableRow key={log.id}>                                
+                                <TableCell>
+                                    {new Intl.DateTimeFormat("en-US", {
+                                        year: "numeric",
+                                        month: "numeric",
+                                        day: "2-digit"
+                                        }).format(new Date(log.eventDate))}
+                                </TableCell>  
                                 <TableCell>{log.area}</TableCell>
                                 <TableCell>{log.machine}</TableCell>
                                 <TableCell>{log.comment}</TableCell>
-                                <TableCell>{log.status}</TableCell>       
                                 <TableCell>
-                                    <Button onClick={_ => props.onEdit(log.log_id)}>Edit</Button>
-                                    <Button onClick={_ => props.onDelete(log.log_id)}>Delete</Button>
+                                    <Switch checked={log.status} />                                    
+                                </TableCell>       
+                                <TableCell>
+                                    <Button onClick={_ => props.onEdit(log.id)}>Edit</Button>
+                                    <Button onClick={_ => props.onDelete(log.id)}>Delete</Button>
                                 </TableCell>                      
                             </TableRow>
                         )}

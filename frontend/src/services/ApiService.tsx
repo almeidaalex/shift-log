@@ -1,14 +1,12 @@
 import Shift from "../models/Shift";
-import Shifts from '../data/shifts.json';
 import axios from "axios";
+import ShiftView from "../models/ShiftView";
 
-const _shitfs : Array<Shift> = []
+const _base_api = process.env.BASE_URL || "https://localhost:5001/api/shift"
 
-const _base_api = 'https://localhost:5001/api/shift'
-
-const fetchData = () : Promise<Shift[]> =>  {
-    return new Promise<Shift[]>((resolve, reject) => {
-        axios.get<Shift[]>(_base_api)
+const fetchData = () : Promise<ShiftView[]> =>  {
+    return new Promise<ShiftView[]>((resolve, reject) => {
+        axios.get<ShiftView[]>(_base_api)
         .then(resp => resolve(resp.data))
         .catch(err => reject(err))
     })
@@ -30,4 +28,20 @@ const pushData = (data: Shift) => {
     })
 }
 
-export { fetchData, pushData, fetchDataById }
+const editData = (id: number, data: Shift) => {
+    return new Promise((resolve, reject) => {
+        axios.put(`${_base_api}/${id}`, data)
+        .then(resp => resolve(resp.data))
+        .catch(err => reject(err))
+    })
+}
+
+const deleteData = (id: number) => {
+    return new Promise((resolve, reject) => {
+        axios.delete(`${_base_api}/${id}`)
+        .then(resp => resolve(resp.data))
+        .catch(err => reject(err))
+    })
+}
+
+export { fetchData, pushData, fetchDataById, editData, deleteData }

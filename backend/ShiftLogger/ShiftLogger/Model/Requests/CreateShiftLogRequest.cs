@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using ShiftLogger.Domain;
 using ShiftLogger.Infra;
 using ShiftLogger.Model;
 
@@ -11,7 +12,7 @@ namespace ShiftLogger.Model.Requests
 {
     public class CreateShiftLogRequest : IRequest<ShiftLog>, IRequestValidator
     {
-        public string Area { get; set; }
+        public AreaEnum Area { get; set; }
         public DateTime EventDate { get; set; }
         public bool Status { get; set; }
         public string Machine { get; set; }

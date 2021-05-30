@@ -28,7 +28,7 @@ namespace ShiftLogger.Controllers
         [HttpGet("{id:int}")]
         public IActionResult Get(int id) =>
              _repository.Get(id) is ShiftLog log
-                 ? Ok((ShiftLogView)log)
+                 ? Ok(log)
                  : NotFound();
         
         [HttpDelete("{id:int}")]
@@ -57,6 +57,9 @@ namespace ShiftLogger.Controllers
         [ProducesResponseType(typeof(ShiftLog), 200)]
         public async Task<IActionResult> Put(int id, [FromBody] UpdateShiftLogRequest request)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            
             var result = await _mediator.Send(request);
             return result.Success
                 ? Ok(result.Value)
