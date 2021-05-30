@@ -1,0 +1,20 @@
+[
+    {
+        "log_id": 1,
+        "status": true,
+        "event_date": "2021-05-10",
+        "area": 1,    
+        "machine": "machine 01",
+        "operator": "Rocher",
+        "comment": "A calm day"
+    },
+    {
+        "log_id": 2,
+        "status": true,
+        "event_date": "2021-05-10",
+        "area": 2,    
+        "machine": "machine 02",
+        "operator": "Rocher 2",
+        "comment": "Grace is my love"
+    }
+]

@@ -1,0 +1,7 @@
+.dialog-title {
+    display: flex;
+}
+
+.button-title {
+    align-items: flex-end;
+}

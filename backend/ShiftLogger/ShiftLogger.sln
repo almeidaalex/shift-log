@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiftLogger", "ShiftLogger\ShiftLogger.csproj", "{0209FA74-834C-4840-82B9-5D988CB7237F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiftLogger.Tests", "ShiftLogger.Tests\ShiftLogger.Tests.csproj", "{A94AE077-8501-455B-A4A7-A1278FE09D7A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0209FA74-834C-4840-82B9-5D988CB7237F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0209FA74-834C-4840-82B9-5D988CB7237F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0209FA74-834C-4840-82B9-5D988CB7237F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0209FA74-834C-4840-82B9-5D988CB7237F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A94AE077-8501-455B-A4A7-A1278FE09D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A94AE077-8501-455B-A4A7-A1278FE09D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A94AE077-8501-455B-A4A7-A1278FE09D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A94AE077-8501-455B-A4A7-A1278FE09D7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
