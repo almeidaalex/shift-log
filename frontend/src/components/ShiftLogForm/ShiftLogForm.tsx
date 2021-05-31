@@ -3,6 +3,7 @@ import {
     Button,
     FormControl,
     FormControlLabel,
+    Grid,
     InputLabel,
     MenuItem,
     Select,
@@ -13,7 +14,7 @@ import {
     KeyboardDatePicker,
     MuiPickersUtilsProvider,
 } from "@material-ui/pickers";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import Shift from "../../models/Shift";
 import { DeleteDialog } from "../DeleteDialog";
@@ -55,6 +56,10 @@ const ShiftLogForm = (props: ShiftFormProps) => {
             onSubmit={handleSubmit(onSubmit)}
             noValidate
         >
+            <Button color="primary" variant="outlined" type="submit">
+                Save
+            </Button>
+
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <Controller
                     render={({ field }) => (
@@ -81,16 +86,16 @@ const ShiftLogForm = (props: ShiftFormProps) => {
 
             <Controller
                 name="area"
-                control={control}                
+                control={control}
                 render={({ field }) => (
                     <FormControl>
                         <InputLabel id="area-label">Area</InputLabel>
                         <Select
                             {...field}
                             labelId="area-label"
-                            error={errors?.area?.type === "required"} 
-                            required
-                        >                            
+                            error={errors?.area?.type === "required"}
+                            required                            
+                        >
                             <MenuItem value={1}>Control Room</MenuItem>
                             <MenuItem value={2}>Factory Floor</MenuItem>
                             <MenuItem value={3}>Expedition</MenuItem>
@@ -122,6 +127,7 @@ const ShiftLogForm = (props: ShiftFormProps) => {
             <Controller
                 control={control}
                 name="status"
+                defaultValue={false}
                 render={({ field: { value, onChange } }) => (
                     <FormControlLabel
                         control={<Switch checked={value} onChange={onChange} />}
@@ -146,11 +152,10 @@ const ShiftLogForm = (props: ShiftFormProps) => {
                 )}
             />
 
-            <Button color="primary" variant="outlined" type="submit">
-                Save
-            </Button>
+           
             <Button
-                color="primary"
+                style={{marginTop: 20}}
+                color="secondary"
                 variant="outlined"
                 type="submit"
                 onClick={(e) => {

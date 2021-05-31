@@ -18,5 +18,9 @@
     <ItemGroup>
       <ProjectReference Include="..\ShiftLogger.Domain\ShiftLogger.Domain.csproj" />
     </ItemGroup>
+      
+    <ItemGroup>
+      <Compile Remove="Controllers\WeatherForecastController.cs" />
+    </ItemGroup>
 
 </Project>

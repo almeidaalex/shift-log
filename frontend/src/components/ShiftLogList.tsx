@@ -51,12 +51,9 @@ export const ShiftLogList = (props: ShiftLogProps) => {
                   <Switch checked={log.status} />
                 </TableCell>
                 <TableCell>
-                  <Button onClick={() => props.onEdit(log.id)} id="btn-edit">
+                  <Button color="primary" variant="outlined" onClick={() => props.onEdit(log.id)} id="btn-edit">
                     Edit
-                  </Button>
-                  <Button onClick={() => props.onDelete(log.id)} id="btn-delete">
-                    Delete
-                  </Button>
+                  </Button>                  
                 </TableCell>
               </TableRow>
             ))}

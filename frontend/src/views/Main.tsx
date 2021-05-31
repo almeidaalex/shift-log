@@ -88,11 +88,11 @@ const Main = () => {
                 Add Shift Log
             </Button>
 
-            <ShiftDialog title="Add Shift Log" open={openAdd} >
-                <ShiftLogForm onSubmit={onAddShift}></ShiftLogForm>
+            <ShiftDialog title="Add Shift Log" open={openAdd} onClose={() => setOpenAdd(false)}>
+                <ShiftLogForm onSubmit={onAddShift} ></ShiftLogForm>
             </ShiftDialog>
 
-            <ShiftDialog title="Edit Shift Log" open={openEdit}>
+            <ShiftDialog title="Edit Shift Log" open={openEdit} onClose={() => setOpenEdit(false)}>
                 <ShiftLogForm
                     onSubmit={onEditShift}
                     data={shift}

@@ -5,6 +5,7 @@ import {
     DialogTitle,
 } from "@material-ui/core";
 import { ReactNode } from "react";
+import { isPropertySignature } from "typescript";
 import Shift from "../../models/Shift";
 
 type ShiftDialogProps = {
@@ -12,13 +13,14 @@ type ShiftDialogProps = {
     title: string;
     children?: ReactNode;
     dialogActions?: ReactNode;
-    onClose?: (shift: Shift) => void;
+    onClose?: () => void;
 };
 
 const ShiftDialog = (props: ShiftDialogProps) => {
-    const { open, title, children, dialogActions } = props;
+    const { open, title, children, dialogActions, onClose } = props;
+    
     return (
-        <Dialog open={open}>
+        <Dialog open={open} onClose={onClose}>
             <DialogTitle className="dialog-title">{title}</DialogTitle>
             <DialogContent>{children}</DialogContent>
             <DialogActions>{dialogActions}</DialogActions>
