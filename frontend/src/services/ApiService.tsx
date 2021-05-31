@@ -2,7 +2,7 @@ import Shift from "../models/Shift";
 import axios from "axios";
 import ShiftView from "../models/ShiftView";
 
-const _base_api = process.env.BASE_URL || "https://localhost:5001/api/shift"
+const _base_api = process.env.REACT_APP_BASE_URL || "https://localhost:5001/api/shift"
 
 const fetchData = () : Promise<ShiftView[]> =>  {
     return new Promise<ShiftView[]>((resolve, reject) => {
