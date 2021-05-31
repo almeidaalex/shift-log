@@ -5,8 +5,6 @@ import {
     DialogTitle,
 } from "@material-ui/core";
 import { ReactNode } from "react";
-import { isPropertySignature } from "typescript";
-import Shift from "../../models/Shift";
 
 type ShiftDialogProps = {
     open: boolean;

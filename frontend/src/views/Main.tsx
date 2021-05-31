@@ -59,25 +59,6 @@ const Main = () => {
             .then(onSuccessfulOperation);
     };
 
-    const addActionButtons = ()  => {
-        return <>
-            <Button color="primary" variant="outlined" type="submit">
-                Save
-            </Button>
-            <Button
-                color="primary"
-                variant="outlined"
-                type="submit"
-                onClick={(e) => {
-                    e.preventDefault();
-                    //setDeleteDialogOpen(true);
-                }}
-            >
-                Delete
-            </Button>
-        </>
-    }
-
     return (
         <>
             <Button
