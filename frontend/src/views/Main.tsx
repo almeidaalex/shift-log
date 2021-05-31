@@ -25,8 +25,7 @@ const Main = () => {
     }, []);
 
     const onSuccessfulOperation = async () => {
-        setShiftLogs(await fetchData());
-        console.log("Fez o fetch");
+        setShiftLogs(await fetchData());     
     };
 
     const onAddShift = (shift: Shift): void => {
@@ -50,7 +49,8 @@ const Main = () => {
         deleteData(log_id).then(() => {
             setOpenEdit(false)
             console.log(`Deleted ${log_id}`);
-        });
+        })
+        .then(onSuccessfulOperation);
     };
 
     const onEditShift = (shift: Shift): void => {

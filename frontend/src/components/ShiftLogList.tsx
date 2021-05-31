@@ -30,7 +30,8 @@ export const ShiftLogList = (props: ShiftLogProps) => {
               <TableCell>Area</TableCell>
               <TableCell>Machine</TableCell>
               <TableCell>Comment</TableCell>
-              <TableCell>Status</TableCell>
+              <TableCell>Operator</TableCell>
+              <TableCell>Status</TableCell>              
               <TableCell></TableCell>
             </TableRow>
           </TableHead>
@@ -46,7 +47,8 @@ export const ShiftLogList = (props: ShiftLogProps) => {
                 </TableCell>
                 <TableCell>{log.area}</TableCell>
                 <TableCell>{log.machine}</TableCell>
-                <TableCell>{log.comment}</TableCell>
+                <TableCell>{log.comment}</TableCell>                
+                <TableCell>{log.operator}</TableCell>
                 <TableCell>
                   <Switch checked={log.status} />
                 </TableCell>
