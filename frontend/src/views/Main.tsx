@@ -59,6 +59,25 @@ const Main = () => {
             .then(onSuccessfulOperation);
     };
 
+    const addActionButtons = ()  => {
+        return <>
+            <Button color="primary" variant="outlined" type="submit">
+                Save
+            </Button>
+            <Button
+                color="primary"
+                variant="outlined"
+                type="submit"
+                onClick={(e) => {
+                    e.preventDefault();
+                    //setDeleteDialogOpen(true);
+                }}
+            >
+                Delete
+            </Button>
+        </>
+    }
+
     return (
         <>
             <Button
@@ -69,7 +88,7 @@ const Main = () => {
                 Add Shift Log
             </Button>
 
-            <ShiftDialog title="Add Shift Log" open={openAdd}>
+            <ShiftDialog title="Add Shift Log" open={openAdd} >
                 <ShiftLogForm onSubmit={onAddShift}></ShiftLogForm>
             </ShiftDialog>
 
@@ -77,7 +96,7 @@ const Main = () => {
                 <ShiftLogForm
                     onSubmit={onEditShift}
                     data={shift}
-                    onDeleteConfirm={onDeletingShift}
+                    onDeleteConfirm={onDeletingShift}                    
                 ></ShiftLogForm>
             </ShiftDialog>
 
