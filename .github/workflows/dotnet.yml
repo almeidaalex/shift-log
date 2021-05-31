@@ -23,11 +23,11 @@ jobs:
       with:
         dotnet-version: '5.0.x'
         
-    - name: List folder
-      run: ls -la
+    - name: Setup Solution Folder
+      run: cd backend/ShiftLogger
 
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
+    - name: Build with dotnet      
+      run: ls -la; dotnet build --configuration Release
 
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
